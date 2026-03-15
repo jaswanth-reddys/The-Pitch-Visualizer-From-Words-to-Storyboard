@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Visualizer - Create Your Storyboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div class="gradient-bg p-8 text-white text-center">
+            <h1 class="text-4xl font-extrabold mb-2">The Pitch Visualizer</h1>
+            <p class="text-lg opacity-90">Transform your words into a stunning storyboard</p>
+        </div>
+        
+        <form action="/generate" method="post" class="p-8 space-y-6">
+            <div>
+                <label for="text" class="block text-sm font-semibold text-gray-700 mb-2">Paste your customer success story or pitch narrative</label>
+                <textarea 
+                    name="text" 
+                    id="text" 
+                    rows="6" 
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition duration-200"
+                    placeholder="Example: A busy sales professional struggles to keep track of leads in a chaotic spreadsheet. Suddenly, they discover our new AI-powered CRM. Now, they're closing deals in record time and enjoying more time with their family."
+                    required
+                ></textarea>
+                <p class="text-xs text-gray-500 mt-2">Recommended: 3-5 sentences for best results.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="style" class="block text-sm font-semibold text-gray-700 mb-2">Choose Visual Style</label>
+                    <select 
+                        name="style" 
+                        id="style" 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none appearance-none bg-white transition duration-200"
+                    >
+                        <option value="digital art">Digital Art (Vibrant & Modern)</option>
+                        <option value="photorealistic">Photorealistic (Professional & Sharp)</option>
+                        <option value="sketch">Hand-drawn Sketch (Creative & Artistic)</option>
+                        <option value="oil painting">Oil Painting (Classic & Textured)</option>
+                        <option value="futuristic synthwave">Futuristic (Sci-fi & Neon)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button 
+                type="submit" 
+                class="w-full gradient-bg text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200"
+            >
+                Generate Storyboard
+            </button>
+        </form>
+    </div>
+    
+    <footer class="mt-8 text-gray-500 text-sm">
+        Powered by OpenAI DALL-E 3 & Gemini 1.5
+    </footer>
+</body>
+</html>
